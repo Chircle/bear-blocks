@@ -654,11 +654,11 @@ export function Game() {
                   <span>Aktuelles Level</span>
                 </div>
                 <div className="flex items-center gap-1">
-                  <div className="w-4 h-4 bg-amber-500 rounded"></div>
+                  <div className="w-4 h-4 bg-amber-500 rounded border-2 border-amber-700"></div>
                   <span>Verfügbar</span>
                 </div>
                 <div className="flex items-center gap-1">
-                  <div className="w-4 h-4 bg-gray-200 rounded"></div>
+                  <div className="w-4 h-4 bg-gray-200 rounded border-2 border-gray-400"></div>
                   <span>Gesperrt</span>
                 </div>
               </div>
