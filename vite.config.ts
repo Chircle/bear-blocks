@@ -5,7 +5,7 @@
 
   export default defineConfig({
     plugins: [react()],
-    base: '/bear-blocks/',
+    base: process.env.NODE_ENV === 'production' ? '/bear-blocks/' : '/',
     resolve: {
       extensions: ['.js', '.jsx', '.ts', '.tsx', '.json'],
       alias: {
