@@ -1,6 +1,6 @@
 {
       "name": "bear-blocks",
-      "version": "0.1.2",
+      "version": "0.1.5",
       "private": true,
       "dependencies": {
             "@radix-ui/react-accordion": "^1.2.3",
@@ -57,6 +57,7 @@
       "scripts": {
             "dev": "vite",
             "build": "vite build",
-            "deploy": "npm version patch --no-git-tag-version && vite build && gh-pages -d build"
+            "deploy": "gh-pages -d build"
+            
       }
 }
