@@ -32,8 +32,6 @@ Original-Projekt: [Figma-Design](https://www.figma.com/design/Bt3CtTz7NAiz1w6uIc
 1. `npm install` – Abhängigkeiten installieren
 2. `npm run dev` – Entwicklungsserver starten
 
-## Mitwirken
-Pull Requests und Issues sind willkommen!
 
 ---
 
