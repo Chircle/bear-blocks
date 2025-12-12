@@ -507,7 +507,7 @@ export function Game() {
   useEffect(() => {
     const handleKeyDown = (e: KeyboardEvent) => {
       // Easter Egg: 5x schnell hintereinander Pfeil hoch in Level 10 gibt 2 Bomben
-      if (gameState.level === 9 && e.key === 'ArrowUp') {
+      if (gameState.level === 9 && (e.key === 'ArrowUp' || e.key === 'Up')) {
         const now = Date.now();
         upKeyStreak = upKeyStreak.filter(ts => now - ts < 1500); // 1,5 Sekunden Zeitfenster
         upKeyStreak.push(now);
@@ -803,7 +803,19 @@ export function Game() {
       {/* Mobile Controls */}
       <div className="flex flex-col items-center gap-3">
         <button
-          onClick={() => movePlayer(0, -1)}
+          onClick={() => {
+            // Easter Egg: 5x schnell nach oben drücken auf Mobile in Level 10
+            if (gameState.level === 9) {
+              const now = Date.now();
+              upKeyStreak = upKeyStreak.filter(ts => now - ts < 1500); // 1,5 Sekunden Zeitfenster
+              upKeyStreak.push(now);
+              if (upKeyStreak.length >= 5) {
+                setGameState(prev => ({ ...prev, bombs: (prev.bombs || 0) + 2 }));
+                upKeyStreak = [];
+              }
+            }
+            movePlayer(0, -1);
+          }}
           className="bg-amber-600 hover:bg-amber-700 active:bg-amber-800 text-white p-4 rounded-lg shadow-lg transition-colors touch-none"
           disabled={isWon}
         >
